@@ -3,10 +3,12 @@
 # Exit on any error
 set -e
 
+source ./config.sh
 # Define the mail name
-MAILNAME="mail.richbio.online"
+MAILNAME=$systemmailname
 
-echo "Setting mail name to $MAILNAME..."
+echo "Your selected system mailname is $systemmailname"
+echo "MAILNAME is set to: $MAILNAME"
 
 # Pre-seed Postfix installation with the mail name and configuration type
 echo "postfix postfix/mailname string $MAILNAME" | sudo debconf-set-selections
